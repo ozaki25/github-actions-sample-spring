@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: test
-        run: |
-          ./gradlew test
+      # - name: test
+      #   run: |
+      #     ./gradlew test
       - name: build
         run: |
           ./gradlew build docker
