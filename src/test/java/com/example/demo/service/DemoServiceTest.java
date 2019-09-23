@@ -19,8 +19,4 @@ public class DemoServiceTest {
     assertEquals(3, service.calc(1, 2));
   }
 
-  @Test
-  public void 引数として1と2を渡すと4が返るわけない() {
-    assertEquals(4, service.calc(1, 2));
-  }
 }
