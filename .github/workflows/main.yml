@@ -11,12 +11,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: build
         run: |
           ./gradlew build docker
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: login
         uses: actions/heroku@master
         env:
