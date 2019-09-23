@@ -8,6 +8,9 @@ jobs:
       - name: test
         run: |
           ./gradlew test
+      - name: build
+        run: |
+          ./gradlew build docker
       - name: login
         uses: actions/heroku@master
         env:
