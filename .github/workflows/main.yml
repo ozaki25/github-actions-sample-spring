@@ -13,10 +13,16 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
-          args: login
+          args: container:login
       - name: push
         uses: actions/heroku@master
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
-          args: git push https://git.heroku.com/github-actions-sample-spring.git master
+          args: container:push -a github-actions-sample-spring web
+      - name: release
+        uses: actions/heroku@master
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:release -a github-actions-sample-spring web
