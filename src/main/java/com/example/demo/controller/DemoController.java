@@ -12,6 +12,7 @@ public class DemoController {
   @Autowired
   private DemoService service;
 
+  // http://localhost:8080?a=1&b=2
   @GetMapping
   public int index(@RequestParam int a, @RequestParam int b) {
     return service.calc(a, b);
