@@ -8,6 +8,3 @@ jobs:
       - name: test
         run: |
           ./gradlew test
-      - name: test
-        run: |
-          ./gradlew test
