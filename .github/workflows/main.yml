@@ -1,7 +1,7 @@
 name: Main
 on: [push]
 jobs:
-  test:
+  test_build_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -28,4 +28,4 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
-          args: container:release -a github-actions-sample-spring web
+          args: container:release -a github-actions-sample-spring
