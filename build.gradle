@@ -42,4 +42,5 @@ docker {
     name "${project.group}/${bootJar.baseName}"
     copySpec.from(tasks.unpack.outputs).into("dependency")
     buildArgs(['DEPENDENCY': "dependency"])
+		buildArgs(['JAR_FILE': "${bootJar.baseName}"])
 }
