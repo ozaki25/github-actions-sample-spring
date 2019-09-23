@@ -8,3 +8,21 @@ jobs:
       - name: test
         run: |
           ./gradlew test
+      - name: login
+        uses: actions/heroku@v1
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:login
+      - name: push
+        uses: actions/heroku@v1
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:push -a github-actions-sample-spring web
+      - name: release
+        uses: actions/heroku@v1
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:release -a github-actions-sample-spring web
